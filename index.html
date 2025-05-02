@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Absensi Rawat Inap</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; }
+    form { max-width: 400px; }
+    label { display: block; margin-top: 1em; }
+  </style>
 </head>
 <body>
-  <h1>Absensi Pegawai Ranap</h1>
+  <h1>Absensi Pegawai Rawat Inap</h1>
   <form id="absenForm">
-    <label>Nama: <input type="text" name="nama" required></label><br>
+    <label>Nama:
+      <input type="text" name="nama" required>
+    </label>
     <label>Aksi:
-      <select name="aksi">
+      <select name="aksi" required>
         <option value="masuk">Masuk</option>
         <option value="keluar">Keluar</option>
       </select>
-    </label><br>
+    </label>
     <button type="submit">Kirim</button>
   </form>
-  <p id="respon"></p>
+  <p id="respon" style="margin-top:1em;"></p>
 
   <script src="script.js"></script>
 </body>
