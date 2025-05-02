@@ -7,7 +7,7 @@ document.getElementById("absenForm").addEventListener("submit", async (e) => {
     waktu: new Date().toISOString()
   };
 
-  const res = await fetch("https://script.google.com/macros/s/AKfycbw7mY1UmMP_mYD5_mtlKFuDeGpM9Ofm_IGy1DICMjKsHHyNI5lqHfdLHx9cQJJ_D3ku/exec", {
+  const res = await fetch("https://script.google.com/macros/s/AKfycbzeY0tB7azJok0vkeWP0PZhmxZDzmb77nV7gwnG-lmhhu_wRkkOKCP5KzYZbQJ72jeg/exec", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(data)
