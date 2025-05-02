@@ -25,6 +25,31 @@
   </form>
   <p id="respon" style="margin-top:1em;"></p>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("absenForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        nama: form.nama.value,
+        aksi: form.aksi.value,
+        waktu: new Date().toISOString()
+      };
+
+      try {
+        const res = await fetch("https://script.google.com/macros/s/AKfycbwhzdkQypYK3wShRsZaVdV-4qzqdLqMRznLySFXUxOOR9DneUSLZNIwzDyJwnzh6v-Q/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const hasil = await res.text();
+        document.getElementById("respon").textContent = hasil;
+        form.reset();
+      } catch (error) {
+        document.getElementById("respon").textContent = "Gagal mengirim. Coba lagi.";
+        console.error(error);
+      }
+    });
+  </script>
 </body>
 </html>
